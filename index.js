@@ -1,7 +1,14 @@
 function dirReduc(arr) {
-      var xCord = 0;
-      var yCord = 0;
+      var xCord = 0; // -West <-+-> +East
+      var yCord = 0;// -South <-+-> +North
       let newArr = [];
+
+// We will calc the best path in the x and y axis EX:-2,1 = West, West, North
+//      +North
+//         ↑
+// -West <-+-> +East
+//         ↓
+//      -South
 
       arr.map(x => {
             switch (x.toLowerCase()) {
@@ -23,14 +30,14 @@ function dirReduc(arr) {
             }
       });
 
+//Next we construct newArr, first x then y
+      while (xCord > 0) { newArr.push("East"); xCord--; };// +x
+      while (xCord < 0) { newArr.push("West"); xCord++; };// -x
+      while (yCord > 0) { newArr.push("North"); yCord--; };// +y
+      while (yCord < 0) { newArr.push("South"); yCord++; };// -y
 
-      while (xCord > 0) { newArr.push("East"); xCord--; };
-      while (xCord < 0) { newArr.push("West"); xCord++; };
-      while (yCord > 0) { newArr.push("North"); yCord--; };
-      while (yCord < 0) { newArr.push("South"); yCord++; };
-
-      console.log(newArr)
-      return newArr.length()>0?newArr:'Better Stay Put'
+      console.log(newArr.length>0?newArr:'Better Stay Put')
+      return newArr.length>0?newArr:'Better Stay Put'
 }
 
 
@@ -38,8 +45,8 @@ function dirReduc(arr) {
 // Test Case
 
 dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"])// Expected Result: ["WEST"]
-dirReduc(["NORTH", "WEST", "SOUTH", "EAST"])// Expected Result: []
-dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"])// Expected Result: []
+dirReduc(["NORTH", "WEST", "SOUTH", "EAST"])// Expected Result: Better Stay Put
+dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"])// Expected Result: Better Stay Put
 dirReduc(["NORTH", "EAST", "SOUTH", "EAST", "NORTH", "EAST",])// Expected Result: [ 'East', 'East', 'East', 'North' ]
 dirReduc(["NORTH", "SOUTH", "SOUTH", "WEST", "SOUTH", "WEST"])// Expected Result: [ 'West', 'West', 'South', 'South' ]
 dirReduc(["NORTH", "EAST", "SOUTH", "EAST", "NORTH", "EAST", "WEST", "EAST", "WEST", "NORTH", "NORTH", "NORTH"])// Expected Result: [ 'East', 'East', 'North', 'North', 'North', 'North' ]
