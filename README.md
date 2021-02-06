@@ -20,13 +20,19 @@ Directions
     better stay to the same place! So the task is to give to the man a simplified version of the plan. 
     A better plan in this case is simply:
 
-    ["-NORTH-", "~SOUTH~", "SOUTH", "*EAST*", "WEST", "NORTH", "WEST"] = ["WEST"]
-
+    ["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"] = ["WEST"]
+       x         x        x       x       x       x         〇         
+       
+       
     Other examples:
      ["NORTH","SOUTH","SOUTH","EAST","WEST","NORTH"] = [];
+        x        x       x      x      x      x
+        
      ["EAST", "EAST", "WEST", "NORTH", "WEST", "EAST", "EAST", "SOUTH", "NORTH", "WEST"] = ["EAST", "NORTH"];
+        x       x       x        x       x       x       〇       x        〇       x
+        
      ["NORTH", "WEST", "SOUTH", "EAST"] = [];
-
+         x       x        x       x
 
 
 
