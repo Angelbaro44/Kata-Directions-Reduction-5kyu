@@ -1,0 +1,1 @@
+# Kata-Directions-Reduction-5kyu
