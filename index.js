@@ -35,3 +35,11 @@ function dirReduc(arr) {
 
 
 
+// Test Case
+
+dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"])// Expected Result: ["WEST"]
+dirReduc(["NORTH", "WEST", "SOUTH", "EAST"])// Expected Result: []
+dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"])// Expected Result: []
+dirReduc(["NORTH", "EAST", "SOUTH", "EAST", "NORTH", "EAST",])// Expected Result: [ 'East', 'East', 'East', 'North' ]
+dirReduc(["NORTH", "SOUTH", "SOUTH", "WEST", "SOUTH", "WEST"])// Expected Result: [ 'West', 'West', 'South', 'South' ]
+dirReduc(["NORTH", "EAST", "SOUTH", "EAST", "NORTH", "EAST", "WEST", "EAST", "WEST", "NORTH", "NORTH", "NORTH"])// Expected Result: [ 'East', 'East', 'North', 'North', 'North', 'North' ]
