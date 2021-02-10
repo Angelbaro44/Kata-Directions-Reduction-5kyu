@@ -29,7 +29,7 @@ function dirReduc(arr) {
                         break;
             }
       });
-
+ 
 //Next we construct newArr, first x then y
       while (xCord > 0) { newArr.push("East"); xCord--; };// +x
       while (xCord < 0) { newArr.push("West"); xCord++; };// -x
